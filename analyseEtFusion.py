@@ -1,21 +1,32 @@
 import pandas as pd
 
-## FICHIER UNSD pour les pays et régions du monde
 # Charger les fichiers CSV
 region = pd.read_csv('UNSD.csv')
 
-# Uniformiser les noms de colonnes
-region.rename(columns={'Country': 'Country'}, inplace=True)  # Garder la colonne 'region' en minuscule
-
-# Gérer les valeurs manquantes
-region.fillna(0, inplace=True)
+# Supprimer la colonne 'Sub-region Code'
+region.drop('Sub-region Name', axis=1, inplace=True)
 
 # Supprimer les doublons
 region.drop_duplicates(inplace=True)
 
-# Normaliser les noms de pays (exemple simple)
+# Normaliser les noms de pays
 region['Country'] = region['Country'].str.strip().str.lower()
 
+# Lire le fichier RegionCountry.csv 
+regionOC = pd.read_csv('RegionCountry.csv')
+
+# Renommer et normaliser les colonnes
+regionOC.rename(columns={'COUNTRY (DISPLAY)': 'Country', 'REGION (DISPLAY)': 'region'}, inplace=True)
+regionOC['Country'] = regionOC['Country'].str.strip().str.lower()
+
+# Effectuer une jointure (merge) sur 'Country' en mode OUTER pour récupérer toutes les données
+merged_df = pd.merge(region, regionOC, on='Country', how='outer', suffixes=('_region', '_oc'))
+
+# Prioriser la région de regionOC si elle existe
+merged_df['region'] = merged_df['region_oc'].combine_first(merged_df['region_region'])
+
+# Supprimer les colonnes temporaires
+merged_df = merged_df[['Country', 'region']]
 
 ## FICHIER Population
 # Charger les fichiers CSV
@@ -37,9 +48,40 @@ population['Year'] = population['Year'].astype(int)
 population['Country'] = population['Country'].str.strip().str.lower()
 
 #jointure des deux fichiers sur la colonne Country
-df_final = population.merge(region, on='Country', how='inner')
-#Etant donné que j'ai plus de pays dans le fichier region qui provient d'une source externe, je fais un inner join 
-# pour ne garder que les pays qui existent dans les deux fichiers
+df_final = population.merge(merged_df, on='Country', how='left')
+#Etant donné que j'ai plus de pays dans le fichier region qui provient d'une source externe, je fais un left join 
+# pour ne garder que les pays qui existent dans le fichier population
+
+
+# Dictionnaire des régions à attribuer pour chaque pays selon la classification M49 des Nations Unies
+region_dict = {
+    "sudan (former)": "Northern Africa",
+    "channel islands": "Northern Europe",
+    "china, hong kong sar": "Eastern Asia",
+    "china, macao sar": "Eastern Asia",
+    "china, mainland": "Eastern Asia",
+    "china, taiwan province of": "Eastern Asia",
+    "french guyana": "South America",
+    "netherlands antilles (former)": "Caribbean",
+    "palestine": "Western Asia",
+    "saint helena, ascension and tristan da cunha": "Sub-Saharan Africa",
+    "saint-martin (french part)": "Caribbean",
+    "serbia and montenegro": "Southern Europe",
+    "sint maarten (dutch part)": "Caribbean"
+}
+
+# Normalisation des noms de pays dans df_final
+df_final['Country'] = df_final['Country'].str.strip().str.lower()
+
+# Remplir les valeurs manquantes dans la colonne 'region' en utilisant le dictionnaire
+df_final['region'] = df_final.apply(
+    lambda row: region_dict.get(row['Country'], row['region']), axis=1)
+
+# Assurez-vous qu'il n'y a pas de valeurs manquantes restantes
+# Si une valeur dans 'region' est toujours manquante, on peut lui attribuer une valeur par défaut, par exemple 'Unknown'
+df_final['region'].fillna('Unknown', inplace=True)
+
+
 
 ## FICHIER mortalite
 # Charger les fichiers CSV
@@ -90,6 +132,7 @@ df_final = df_final.merge(acces_potable, on=['Country', 'Year', 'Granularity'], 
 #Dans le fichier acces_potable il manque une année par rapport au fichier joint précédemment
 #Je fais un left join pour ne pas perdre les informations des pays qui n'ont pas de données d'accès à l'eau potable
 
+
 ## FICHIER political_stability
 # Charger les fichiers CSV
 political_stability = pd.read_csv('PoliticalStability.csv')
@@ -114,6 +157,6 @@ df_final = df_final.merge(political_stability, on=['Country', 'Year', 'Granulari
 #Dans le fichier political_stability il manque 2 valeurs de granularity par rapport au fichier joint précédemment
 #Je fais un left join pour ne pas perdre les informations des pays qui n'ont pas de données de stabilité politique
 
-
-
-
+#convertir le fichier final en csv
+df_final.to_csv('PIVOT.csv', index=False)
+print('Fusion terminée')
