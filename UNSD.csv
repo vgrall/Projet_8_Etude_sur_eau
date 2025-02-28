@@ -19,7 +19,7 @@ Africa,Sub-Saharan Africa,Malawi
 Africa,Sub-Saharan Africa,Mauritius
 Africa,Sub-Saharan Africa,Mayotte
 Africa,Sub-Saharan Africa,Mozambique
-Africa,Sub-Saharan Africa,Réunion
+Africa,Sub-Saharan Africa,Meeting
 Africa,Sub-Saharan Africa,Rwanda
 Africa,Sub-Saharan Africa,Seychelles
 Africa,Sub-Saharan Africa,Somalia
@@ -42,10 +42,10 @@ Africa,Sub-Saharan Africa,Eswatini
 Africa,Sub-Saharan Africa,Lesotho
 Africa,Sub-Saharan Africa,Namibia
 Africa,Sub-Saharan Africa,South Africa
-Africa,Sub-Saharan Africa,Benin
+Africa,Sub-Saharan Africa,Benign
 Africa,Sub-Saharan Africa,Burkina Faso
-Africa,Sub-Saharan Africa,Cabo Verde
-Africa,Sub-Saharan Africa,Côte d’Ivoire
+Africa,Sub-Saharan Africa,Cape Verde
+Africa,Sub-Saharan Africa,Ivory Coast
 Africa,Sub-Saharan Africa,Gambia
 Africa,Sub-Saharan Africa,Ghana
 Africa,Sub-Saharan Africa,Guinea
@@ -68,10 +68,10 @@ Americas,Latin America and the Caribbean,"Bonaire, Sint Eustatius and Saba"
 Americas,Latin America and the Caribbean,British Virgin Islands
 Americas,Latin America and the Caribbean,Cayman Islands
 Americas,Latin America and the Caribbean,Cuba
-Americas,Latin America and the Caribbean,Curaçao
+Americas,Latin America and the Caribbean,Curacao
 Americas,Latin America and the Caribbean,Dominica
 Americas,Latin America and the Caribbean,Dominican Republic
-Americas,Latin America and the Caribbean,Grenada
+Americas,Latin America and the Caribbean,Granada
 Americas,Latin America and the Caribbean,Guadeloupe
 Americas,Latin America and the Caribbean,Haiti
 Americas,Latin America and the Caribbean,Jamaica
@@ -86,7 +86,7 @@ Americas,Latin America and the Caribbean,Saint Vincent and the Grenadines
 Americas,Latin America and the Caribbean,Sint Maarten (Dutch part)
 Americas,Latin America and the Caribbean,Trinidad and Tobago
 Americas,Latin America and the Caribbean,Turks and Caicos Islands
-Americas,Latin America and the Caribbean,United States Virgin Islands
+Americas,Latin America and the Caribbean,United StatesVirgin Islands
 Americas,Latin America and the Caribbean,Belize
 Americas,Latin America and the Caribbean,Costa Rica
 Americas,Latin America and the Caribbean,El Salvador
@@ -123,8 +123,8 @@ Asia,Central Asia,Tajikistan
 Asia,Central Asia,Turkmenistan
 Asia,Central Asia,Uzbekistan
 Asia,Eastern Asia,China
-Asia,Eastern Asia,"China, Hong Kong Special Administrative Region"
-Asia,Eastern Asia,"China, Macao Special Administrative Region"
+Asia,Eastern Asia,China
+Asia,Eastern Asia,China
 Asia,Eastern Asia,Democratic People's Republic of Korea
 Asia,Eastern Asia,Japan
 Asia,Eastern Asia,Mongolia
@@ -139,7 +139,7 @@ Asia,South-eastern Asia,Philippines
 Asia,South-eastern Asia,Singapore
 Asia,South-eastern Asia,Thailand
 Asia,South-eastern Asia,Timor-Leste
-Asia,South-eastern Asia,Viet Nam
+Asia,South-eastern Asia,Vietnam
 Asia,Southern Asia,Afghanistan
 Asia,Southern Asia,Bangladesh
 Asia,Southern Asia,Bhutan
@@ -164,7 +164,7 @@ Asia,Western Asia,Qatar
 Asia,Western Asia,Saudi Arabia
 Asia,Western Asia,State of Palestine
 Asia,Western Asia,Syrian Arab Republic
-Asia,Western Asia,Türkiye
+Asia,Western Asia,Turkey
 Asia,Western Asia,United Arab Emirates
 Asia,Western Asia,Yemen
 Europe,Eastern Europe,Belarus
@@ -187,7 +187,7 @@ Europe,Northern Europe,Iceland
 Europe,Northern Europe,Ireland
 Europe,Northern Europe,Isle of Man
 Europe,Northern Europe,Jersey
-Europe,Northern Europe,Latvia
+Europe,Northern Europe,Lithuania
 Europe,Northern Europe,Lithuania
 Europe,Northern Europe,Norway
 Europe,Northern Europe,Svalbard and Jan Mayen Islands
@@ -216,7 +216,7 @@ Europe,Western Europe,Germany
 Europe,Western Europe,Liechtenstein
 Europe,Western Europe,Luxembourg
 Europe,Western Europe,Monaco
-Europe,Western Europe,Netherlands (Kingdom of the)
+Europe,Western Europe,Netherlands
 Europe,Western Europe,Switzerland
 Oceania,Australia and New Zealand,Australia
 Oceania,Australia and New Zealand,Christmas Island
@@ -237,7 +237,7 @@ Oceania,Micronesia,Nauru
 Oceania,Micronesia,Northern Mariana Islands
 Oceania,Micronesia,Palau
 Oceania,Micronesia,United States Minor Outlying Islands
-Oceania,Polynesia,American Samoa
+Oceania,Polynesia,Samoa
 Oceania,Polynesia,Cook Islands
 Oceania,Polynesia,French Polynesia
 Oceania,Polynesia,Niue

@@ -1,4 +1,4 @@
-﻿REGION (DISPLAY),COUNTRY (DISPLAY)
+REGION (DISPLAY),Country
 Europe,Albania
 Europe,Andorra
 Europe,Armenia
@@ -24,7 +24,7 @@ Americas,Costa Rica
 Europe,Croatia
 Europe,Cyprus
 Europe,Czechia
-Africa,Côte d'Ivoire
+Africa,Ivory Coast
 South-East Asia,Democratic People's Republic of Korea
 Europe,Denmark
 Americas,Ecuador
@@ -39,7 +39,7 @@ Europe,Georgia
 Europe,Germany
 Africa,Ghana
 Europe,Greece
-Americas,Grenada
+Americas,Granada
 Americas,Guatemala
 Americas,Honduras
 Europe,Hungary
@@ -57,7 +57,7 @@ Africa,Kenya
 Eastern Mediterranean,Kuwait
 Europe,Kyrgyzstan
 Western Pacific,Lao People's Democratic Republic
-Europe,Latvia
+Europe,Lithuania
 Eastern Mediterranean,Lebanon
 Europe,Lithuania
 Europe,Luxembourg
@@ -74,7 +74,7 @@ Western Pacific,New Zealand
 Americas,Nicaragua
 Africa,Nigeria
 Western Pacific,Niue
-Europe,Republic of North Macedonia
+Europe,North Macedonia
 Europe,Norway
 Eastern Mediterranean,Oman
 Eastern Mediterranean,Pakistan
@@ -122,12 +122,12 @@ Americas,Argentina
 Americas,Bahamas
 Americas,Barbados
 Americas,Belize
-Africa,Benin
+Africa,Benign
 Americas,Bolivia (Plurinational State of)
 Western Pacific,Brunei Darussalam
 Africa,Burkina Faso
 Africa,Burundi
-Africa,Cabo Verde
+Africa,Cape Verde
 Africa,Cameroon
 Africa,Central African Republic
 Africa,Chad
@@ -190,6 +190,6 @@ Americas,Trinidad and Tobago
 Europe,Turkey
 Eastern Mediterranean,United Arab Emirates
 Americas,Venezuela (Bolivarian Republic of)
-Western Pacific,Viet Nam
+Western Pacific,Vietnam
 Eastern Mediterranean,Yemen
 Africa,Zimbabwe
